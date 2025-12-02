@@ -145,7 +145,7 @@ LOGIN_URL = "login"
 
 
 AWS_STORAGE_BUCKET_NAME = 'b392-project' # please enter your s3 bucket name
-AWS_S3_CUSTOM_DOMAIN = 'www.techprodevops.com' # AWS_STORAGE_BUCKET_NAME
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_REGION_NAME = "us-east-1" # please enter your s3 region 
 AWS_DEFAULT_ACL = 'public-read'
 
@@ -157,6 +157,7 @@ STATICFILES_DIRS = [
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'cblog.storages.MediaStore'
+
 
 
 
