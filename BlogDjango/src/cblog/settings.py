@@ -85,10 +85,10 @@ WSGI_APPLICATION = 'cblog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Blogdb', # database name in RDS is written here
+        'NAME': 'blogdb', # database name in RDS is written here
         'USER': 'admin', # database master username in RDS is written here
         'PASSWORD': config('PASSWORD'),
-        'HOST': 'blogdb.chs2jc50cfzy.us-east-1.rds.amazonaws.com',  # database endpoint is written here
+        'HOST': 'blog.chs2jc50cfzy.us-east-1.rds.amazonaws.com',  # database endpoint is written here
         'PORT': '3306' # database port is written here
     }
 }
@@ -157,6 +157,7 @@ STATICFILES_DIRS = [
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'cblog.storages.MediaStore'
+
 
 
 
